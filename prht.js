@@ -33,3 +33,10 @@ let div = (a, b) => {
     }, 1000);
   });
 }
+
+// 4, 5, 6
+
+add(4, 5)
+.then((res) => mul(res, 6))
+.then(result => div(result, 2))
+.then(square => console.log(square))

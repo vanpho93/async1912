@@ -37,13 +37,28 @@ let div = (a, b, cb) => {
 //   console.log('Ket qua:', result);
 // })
 
-add(4, 5, (err, result) => {
-  if(err) return console.log(err);
-  mul(result, 6, (err, result) => {
-    if(err) return console.log(err);
-    div(result, 2, (err, result) => {
-      if(err) return console.log(err);
-      console.log('ket qua' + result);
+// add(4, 5, (err, result) => {
+//   if(err) return console.log(err);
+//   mul(result, 6, (err, result) => {
+//     if(err) return console.log(err);
+//     div(result, 2, (err, result) => {
+//       if(err) return console.log(err);
+//       console.log('ket qua' + result);
+//     })
+//   })
+// })
+
+let asyncDienTich = (a, b, h, cb) => {
+  add(a, b, (err, result) => {
+    if(err) return cb(err);
+    mul(result, h, (err, result) => {
+      if(err) return cb(err);
+      div(result, 2, (err, result) => {
+        if(err) return cb(err);
+        cb(undefined, result);
+      })
     })
   })
-})
+}
+
+//Promise

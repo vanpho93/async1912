@@ -5,6 +5,18 @@
     <title>Hello Async</title>
     <script type="text/javascript">
 
+      let aPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(10);
+        }, 3000);
+      });
+
+      console.log(aPromise);
+
+      setTimeout(() => {
+        console.log(aPromise);
+      }, 3500);
+
     </script>
   </head>
   <body>

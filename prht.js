@@ -41,9 +41,9 @@ let div = (a, b) => {
 let dienTich = (a, b, h) => {
   return add(a, b)
   .then(res=> mul(res, h))
-  .then(result => div(result, 2))
+  .then(result => div(result, 0))
 }
 
-dienTich(4, 5, '6')
-.then(square => console.log(square))
-.catch(err => console.log(err + ''))
+dienTich(4, 5, 6)
+.then(square => console.log(square),
+err => console.log(err + ''))
